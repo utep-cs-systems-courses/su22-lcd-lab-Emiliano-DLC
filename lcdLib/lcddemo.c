@@ -18,6 +18,14 @@ main()
 
   drawString5x7(20,20, "hello", COLOR_GREEN, COLOR_RED);
 
-  fillRectangle(30,30, 60, 60, COLOR_ORANGE);
+  fillRectangle(30,30, 60, 60, COLOR_PINK);
+
+  int step = 1;
+  int col = 20,row =80;
+  for(int i = -25; i <= 25; i++)
+    {
+      drawPixel(col+i, row+i, COLOR_BLACK);
+      drawPixel(col+i, row-i, COLOR_BLACK);
+    }
   
 }
