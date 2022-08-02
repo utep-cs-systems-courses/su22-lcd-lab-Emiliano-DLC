@@ -9,7 +9,7 @@ LDFLAGS		= -L/opt/ti/msp430_gcc/include
 CC              = msp430-elf-gcc
 AS              = msp430-elf-gcc -mmcu=${cpu} -c
 
-all: lcdlab3-c.elf lcdlab-s.elf
+all: lcdlab3-c.elf #lcdlab-s.elf
 
 #additional rules for files
 
