@@ -7,23 +7,23 @@ LDFLAGS		= -L/opt/ti/msp430_gcc/include
 
 #switch the compiler (for the internal make rules)
 CC              = msp430-elf-gcc
-AS              = msp430-elf-as
+AS              = msp430-elf-gcc -mmcu=${cpu} -c
 
-all: lcd-c.elf lcd-s.elf
+all: lcdlab3-c.elf lcdlab-s.elf
 
 #additional rules for files
 
-lcd-c.elf: ${COMMON_OBJECTS} 
+lcdlab3-c.elf: ${COMMON_OBJECTS} 
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
 
-lcd-s.elf: ${COMMON_OBJECTS}
-	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
+#lcd-s.elf: ${COMMON_OBJECTS}
+#	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
 
-load-c: lcd-c.elf
+load-c: lcdlab3-c.elf
 	msp430loader.sh $^
 
-load-s: load-s.elf
-	msp430loader.sh $^
+#load-s: load-s.elf
+#	msp430loader.sh $^
 
 clean:
 	rm -f *.o *.elf *~ *#
