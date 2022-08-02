@@ -17,3 +17,5 @@ void switch_init();
 void switch_interrupt_handler();
 
 extern char switches;
+
+#endif

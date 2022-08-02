@@ -4,7 +4,7 @@
 #include "buzzer.h"
 //#include "stateMachines.h"
 
-int switches = 0;
+char switches = 0;
 
 static char switch_update_interrupt_sense()
 {

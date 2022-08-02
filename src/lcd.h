@@ -2,9 +2,11 @@
 #define lcd_included
 
 //Variables
-extern char lcdRD;
+extern char redrawScreen;
+
+void draw_SQ();
+
+void update_shape();
 
 
-
-
-#end
+#endif
