@@ -2,6 +2,7 @@
 #include <libTimer.h>
 #include "lcdutils.h"
 #include "lcddraw.h"
+#include "lcd.h"
 
 #define LED BIT6		/* note that bit zero req'd for display */
 
