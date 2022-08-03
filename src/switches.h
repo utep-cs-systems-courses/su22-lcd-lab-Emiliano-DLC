@@ -15,7 +15,8 @@
 
 void switch_init();
 void switch_interrupt_handler();
+void wtd_c_handler();
 
-extern char switches;
+int switches;
 
 #endif
