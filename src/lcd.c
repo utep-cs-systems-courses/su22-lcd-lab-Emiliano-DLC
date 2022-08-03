@@ -20,3 +20,5 @@ void draw_SQ()
 	    fillRectangle(col, row, 1, 1, COLOR_BLUE);
 	}
 }
+	
+short redrawScreen = 1;
