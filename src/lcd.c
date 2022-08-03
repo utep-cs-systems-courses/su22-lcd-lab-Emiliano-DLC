@@ -7,7 +7,7 @@
 #include "buzzer.h"
 #include "led.h"
 
-/*void R_draw_ptrn()
+void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
 	red_on = 1;
@@ -16,10 +16,10 @@
 	led_update();
   for (unsigned char col = screenHeight; col > 0; col--)
     {
-	red_on ^= 1;
-	green_on ^= 1;
-	led_changed = 1;
-	led_update();
+	//red_on ^= 1;
+	//green_on ^= 1;
+	//led_changed = 1;
+	//led_update();
       for(unsigned char row = screenWidth; row > 0; row--)
 	{ 
 	  if(col % 2 == 0)
@@ -33,21 +33,21 @@
 	}
 }
 	buzzer_set_period(0);
-}*/
+}
 
 void draw_ptrn()
 {
-	red_on = 1;
-	green_on = 0;
-	led_changed = 1;
-	led_update();
+	//red_on = 1;
+	//green_on = 0;
+	//led_changed = 1;
+	//led_update();
 	buzzer_set_period(0);
   for (unsigned char col = 0; col <= screenHeight; col++)
     {
-	red_on ^= 1;
-	green_on ^= 1;
-	led_changed = 1;
-	led_update();
+	//red_on ^= 1;
+	//green_on ^= 1;
+	//led_changed = 1;
+	//led_update();
       for(unsigned char row = 0; row <= screenWidth; row++)
 	{ 
 	  if(col % 2 == 0)
