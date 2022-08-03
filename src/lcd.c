@@ -104,7 +104,7 @@ void position_update_bar()
   if (switches & SW4 && barControlPos[0] < barLim[1]) barControlPos[0] += 3;
 }
 
-----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
 
 char blue = 31, green = 0, red = 31;
 unsigned char step = 0;
