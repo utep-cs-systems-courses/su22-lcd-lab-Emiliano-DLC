@@ -33,11 +33,11 @@ void R_draw_ptrn()
 	{ 
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(row, col, 5, 5, COLOR_BLACK);
+	      fillRectangle(row, col, 5, 5, COLOR_SKY_BLUE);
 		  	buzzer_set_period(0);
 	    }
 	  else
-	    fillRectangle(col, row, 5, 5, COLOR_PINK);
+	    fillRectangle(col, row, 5, 5, COLOR_LIME_GREEN);
 	      buzzer_set_period(0);
 	}
 }
