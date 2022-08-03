@@ -8,9 +8,9 @@
 
 void draw_SQ()
 {
-  for (unsigned char col = 0; col <= screenWidth; col++)
+  for (unsigned char col = 0; col <= screenHeight; col++)
     {
-      for(unsigned char row = 0; row <= screenHeight; row++)
+      for(unsigned char row = 0; row <= screenWidth; row++)
 	{
 	  if(col % 2 == 0)
 	    {
