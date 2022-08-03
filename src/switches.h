@@ -7,7 +7,7 @@
 #define SW2 2 
 #define SW3 4 
 #define SW4 8 
-#define SWITCHES (SW1 | SW2 | SW3 | SW4) //Switches for external board (p2)
+#define SWITCHES 15 //Switches for external board (p2)
 
 //P1DIR
 //#define SW0 BIT4		/* switch1 is p1.3 */
