@@ -29,7 +29,7 @@ void R_draw_ptrn()
   for (unsigned char col = screenHeight; col > 0; col--)
     {
 	  //led_shift();
-      for(unsigned char row = screenWidth; row > 0; row--)
+      for(unsigned char row = 0; row <= screenWidth; row++)
 	{ 
 	  if(col % 2 == 0)
 	    {
