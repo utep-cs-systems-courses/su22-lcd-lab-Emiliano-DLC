@@ -21,14 +21,62 @@ void main()
   enableWDTInterrupts();      /**< enable periodic interrupt */
   or_sr(0x8);	              /**< GIE (enable interrupts) */
   
-  clearScreen(COLOR_ORANGE);
-  draw_SQ();
-  //while (1) {			/* forever */
-  //  if (redrawScreen) {
-  //    redrawScreen = 0;
-  //    update_shape();
-  //  }
-  //  P1OUT &= ~LED;	/* led off */
-  //  or_sr(0x10);	/**< CPU OFF */
-  //  P1OUT |= LED;	/* led on */
+  clearScreen(COLOR_BLUE);
+  while (1) {			/* forever */
+    if (redrawScreen) {
+      redrawScreen = 0;
+      update_shape();
+    }
+    P1OUT &= ~LED;	/* led off */
+    or_sr(0x10);	/**< CPU OFF */
+    P1OUT |= LED;	/* led on */
+  }
+}
+
+void
+screen_update_ball()
+{
+  for (char axis = 0; axis < 2; axis ++) 
+    if (drawPos[axis] != controlPos[axis]) /* position changed? */
+      goto redraw;
+  return;			/* nothing to do */
+ redraw:
+  draw_ball(drawPos[0], drawPos[1], COLOR_BLUE); /* erase */
+  for (char axis = 0; axis < 2; axis ++) 
+    drawPos[axis] = controlPos[axis];
+  draw_ball(drawPos[0], drawPos[1], COLOR_WHITE); /* draw */
+}
+  
+
+void
+screen_update_hourglass()
+{
+  static unsigned char row = screenHeight / 2, col = screenWidth / 2;
+  static char lastStep = 0;
+  
+  if (step == 0 || (lastStep > step)) {
+    clearScreen(COLOR_BLUE);
+    lastStep = 0;
+  } else {
+    for (; lastStep <= step; lastStep++) {
+      int startCol = col - lastStep;
+      int endCol = col + lastStep;
+      int width = 1 + endCol - startCol;
+      
+      // a color in this BGR encoding is BBBB BGGG GGGR RRRR
+      unsigned int color = (blue << 11) | (green << 5) | red;
+      
+      fillRectangle(startCol, row+lastStep, width, 1, color);
+      fillRectangle(startCol, row-lastStep, width, 1, color);
+    }
+  }
+}  
+
+
+    
+void
+update_shape()
+{
+  screen_update_ball();
+  screen_update_hourglass();
 }
