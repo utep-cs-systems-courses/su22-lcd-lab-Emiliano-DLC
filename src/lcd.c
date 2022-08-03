@@ -6,8 +6,38 @@
 #include "lcd.h"
 #include "buzzer.h"
 
+void R_draw_ptrn()
+{
+//buzzer_set_period(5000);
+	red_on = 0;
+	green_on = 0;
+	led_changed = 1;
+	led_update();
+  for (unsigned char screenHeight = 0; col <= 0; col--)
+    {
 
-void draw_SQ()
+      for(unsigned char row = screenWidth; row <= 0; row--)
+	{ 
+	  if(col % 2 == 0)
+	    {
+	      fillRectangle(row, col, 5, 5, COLOR_PINK);
+		  	//buzzer_set_period(10000);
+		  red_on ^= 0;
+	led_changed = 1;
+	led_update();
+	    }
+	  else
+	    fillRectangle(col, row, 5, 5, COLOR_BLACK);
+	      //buzzer_set_period(7500);
+		green_on ^= 0;
+		led_changed = 1;
+		led_update();
+	}
+	}
+	buzzer_set_period(0);
+}
+
+void draw_ptrn()
 {
 	buzzer_set_period(5000);
   for (unsigned char col = 0; col <= screenHeight; col++)
