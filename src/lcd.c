@@ -14,10 +14,10 @@ void draw_SQ()
 	{
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(row, col, 1, 1, COLOR_PINK);
+	      fillRectangle(row, col, 10, 10, COLOR_PINK);
 	    }
 	  else
-	    fillRectangle(col, row, 1, 1, COLOR_BLACK);
+	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
 	}
 	}
 }
