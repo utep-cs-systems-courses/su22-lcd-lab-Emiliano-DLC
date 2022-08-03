@@ -67,7 +67,7 @@ short limitH[2] = {2, screenHeight-1};
 void
 draw_ball(int col, int row, unsigned short color)
 {
-  fillRectangle(col-1, row-1, 1, 1, color);
+  fillRectangle(col, row, 1, 1, color);
 }
 
 void
