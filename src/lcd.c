@@ -86,7 +86,7 @@ screen_update_ball()
 
 void position_update_ball()
 {
-  if (switches & SW1 && controlPos[1] > limitW[1]){
+  if (switches & SW1 && controlPos[1] > limitW[0]){
 	  controlPos[1] -= 1;
   }
   if (switches & SW2 && controlPos[1] < limitW[1]){ 
@@ -95,7 +95,7 @@ void position_update_ball()
   if (switches & SW3 && controlPos[0] > limitH[0]){ 
 	  controlPos[0] -= 1;
   }
-  if (switches & SW4 && controlPos[0] < limitH[0]){ 
+  if (switches & SW4 && controlPos[0] < limitH[1]){ 
 	  controlPos[0] += 1;
   }
 }
