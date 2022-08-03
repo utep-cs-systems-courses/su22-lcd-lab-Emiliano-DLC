@@ -7,27 +7,6 @@
 #include "buzzer.h"
 #include "led.h"
 
-void draw_ptrn()
-{
-	buzzer_set_period(5000);
-  for (unsigned char col = 0; col <= screenHeight; col++)
-    {
-
-      for(unsigned char row = 0; row <= screenWidth; row++)
-	{ 
-	  if(col % 2 == 0)
-	    {
-	      fillRectangle(row, col, 5, 5, COLOR_BLACK);
-		  	buzzer_set_period(10000);
-	    }
-	  else
-	    fillRectangle(col, row, 5, 5, COLOR_PINK);
-	      buzzer_set_period(7500);
-	}
-	}
-	buzzer_set_period(0);
-}
-
 void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
@@ -55,6 +34,29 @@ void R_draw_ptrn()
 }
 	buzzer_set_period(0);
 }
+
+void draw_ptrn()
+{
+	buzzer_set_period(5000);
+  for (unsigned char col = 0; col <= screenHeight; col++)
+    {
+
+      for(unsigned char row = 0; row <= screenWidth; row++)
+	{ 
+	  if(col % 2 == 0)
+	    {
+	      fillRectangle(row, col, 5, 5, COLOR_BLACK);
+		  	buzzer_set_period(10000);
+	    }
+	  else
+	    fillRectangle(col, row, 5, 5, COLOR_PINK);
+	      buzzer_set_period(7500);
+	}
+	}
+	buzzer_set_period(0);
+}
+
+
 
 char blue = 31, green = 0, red = 31;
 unsigned char step = 0;
