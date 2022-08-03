@@ -90,7 +90,7 @@ void
 update_shape()
 {
   screen_update_ball();
-	//draw_SQ();
+	draw_ptrn();
 	R_draw_ptrn();
 }
 
