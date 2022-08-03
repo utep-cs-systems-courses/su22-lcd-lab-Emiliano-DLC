@@ -59,7 +59,8 @@ void draw_ptrn()
 char blue = 31, green = 0, red = 31;
 unsigned char step = 0;
 
-short drawPos[2] = {screenHeight/2 , screenWidth/2}, controlPos[2] = {(screenHeight/2)+1, screenWidth/2};
+//short drawPos[2] = {screenHeight/2 , screenWidth/2}, controlPos[2] = {(screenHeight/2)+1, screenWidth/2};
+short drawPos[2] = {screenWidth/2 , screenHeight/2}, controlPos[2] = {(screenWidth/2)+1, screenHeight/2};
 short colVelocity = 1, colLimits[2] = {1, screenWidth};
 short limitW[2] = {1, screenWidth-1};
 short limitH[2] = {2, screenHeight-1};
