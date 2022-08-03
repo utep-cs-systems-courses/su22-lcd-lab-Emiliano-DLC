@@ -14,7 +14,7 @@
 //#define P1SWITCHES(SW0)		/* only 1 switch on this board */
 
 void switch_init();
-void switch_interrupt_handler();
+//void switch_interrupt_handler();
 void wtd_c_handler();
 
 int switches;
