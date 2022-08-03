@@ -7,22 +7,6 @@
 #include "buzzer.h"
 #include "led.h"
 
-void led_start()
-{
-	red_on = 1;
-	green_on = 0;
-	led_changed = 1;
-	led_update();	
-}
-
-void led_shift()
-{
-	red_on ^= 1;
-	green_on ^= 1;
-	led_changed = 1;
-	led_update();	
-}
-
 void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
@@ -77,11 +61,13 @@ unsigned char step = 0;
 
 short drawPos[2] = {1,50}, controlPos[2] = {2, 50};
 short colVelocity = 1, colLimits[2] = {1, screenWidth};
+short limitW[2] = {0, screenWidth-1};
+short limitH[2] = {0, screenHeight-1};
 
 void
 draw_ball(int col, int row, unsigned short color)
 {
-  fillRectangle(col-1, row-1, 5, 5, color);
+  fillRectangle(col-1, row-1, 1, 1, color);
 }
 
 void
@@ -102,13 +88,18 @@ void
 update_shape()
 {
   screen_update_ball();
-  //screen_update_bar();
-	//led_start();
-	//draw_ptrn();
-	//R_draw_ptrn();
-	//clearScreen(COLOR_BLUE);
 }
 
+void position_update_ball()
+{
+  if (switches & SW1 && controlPos[2] > limitH[0]) controlPos[1] -= 1;
+  if (switches & SW2 && controlPos[2] < limitH[1]) controlPos[1] += 1;
+  if (switches & SW3 && controlPos[0] > limitW[0]) controlPos[0] -= 1;
+  if (switches & SW4 && controlPos[0] < limitW[1]) controlPos[0] += 1;
+}
+
+
+//---------------------------------------------------------------------
 	
 short redrawScreen = 1;
 
@@ -118,27 +109,8 @@ void wdt_c_handler()
 
   secCount ++;
   if (secCount >= 25) {		/* 10/sec */
-   
-    {				/* move ball */
-      short oldCol = controlPos[0];
-      short newCol = oldCol + colVelocity;
-      if (newCol <= colLimits[0] || newCol >= colLimits[1])
-	colVelocity = -colVelocity;
-      else
-	controlPos[0] = newCol;
-    }
-
-    {				/* update hourglass */
-      if (switches & SW3) green = (green + 1) % 64;
-      if (switches & SW2) blue = (blue + 2) % 32;
-      if (switches & SW1) red = (red - 3) % 32;
-      if (step <= 30)
-	step ++;
-      else
-	step = 0;
-      secCount = 0;
-    }
-    if (switches & SW4) return;
-    redrawScreen = 1;
-  }
-}
+   position_update_ball();
+   redrawScreen = 1;
+    secCount = 0;
+   }
+   }
