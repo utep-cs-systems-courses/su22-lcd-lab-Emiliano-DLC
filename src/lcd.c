@@ -28,7 +28,7 @@ void R_draw_ptrn()
 //buzzer_set_period(5000);
   for (unsigned char col = screenHeight; col > 0; col--)
     {
-	  led_shift();
+	  //led_shift();
       for(unsigned char row = screenWidth; row > 0; row--)
 	{ 
 	  if(col % 2 == 0)
@@ -104,7 +104,7 @@ void
 update_shape()
 {
   screen_update_ball();
-	led_start();
+	//led_start();
 	draw_ptrn();
 	R_draw_ptrn();
 	//clearScreen(COLOR_BLUE);
