@@ -1,6 +1,6 @@
 # makfile configuration
 
-COMMON_OBJECTS  = main.o p2_interrupt_handler.o switches.o lcd.o #led.o buzzer.o
+COMMON_OBJECTS  = main.o p2_interrupt_handler.o switches.o lcd.o wdt_handler.o #led.o buzzer.o
 CPU             = msp430g2553
 CFLAGS          = -mmcu=${CPU} -Os -I../h
 LDFLAGS		= -L../lib -L/opt/ti/msp430_gcc/include
