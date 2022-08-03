@@ -22,6 +22,7 @@ draw_ball(int col, int row, unsigned short color)
 }
 
 void
+screen_update_ball()
 {
   for (char axis = 0; axis < 2; axis ++) 
     if (drawPos[axis] != controlPos[axis]) /* position changed? */
