@@ -23,13 +23,12 @@ void main()
   
   clearScreen(COLOR_ORANGE);
   draw_SQ();
-  while (1) {			/* forever */
-    if (redrawScreen) {
-      redrawScreen = 0;
-      update_shape();
-    }
-    P1OUT &= ~LED;	/* led off */
-    or_sr(0x10);	/**< CPU OFF */
-    P1OUT |= LED;	/* led on */
-  }
+  //while (1) {			/* forever */
+  //  if (redrawScreen) {
+  //    redrawScreen = 0;
+  //    update_shape();
+  //  }
+  //  P1OUT &= ~LED;	/* led off */
+  //  or_sr(0x10);	/**< CPU OFF */
+  //  P1OUT |= LED;	/* led on */
 }
