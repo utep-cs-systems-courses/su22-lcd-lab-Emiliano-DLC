@@ -68,7 +68,7 @@ short colLimits[2] = {1, screenWidth};
 void
 draw_ball(int col, int row, unsigned short color)
 {
-  fillRectangle(col, row, 1, 1, color);
+  fillRectangle(col-1, row-1, 1, 1, color);
 }
 
 void
@@ -90,10 +90,10 @@ void position_update_ball()
   if (switches & SW1 && (controlPos[1] > colLimits[0])){
 	  controlPos[1] -= 1;
   }
-  if (switches & SW2 && (controlPos[1] < colLimits[1])==0){ 
+  if ((switches & SW2 && controlPos[1] < colLimits[1]) == 0){ 
 	  controlPos[1] += 1;
   }
-  if (switches & SW3 && (controlPos[0] > colLimits[0])==0){ 
+  if ((switches & SW3 && controlPos[0] > colLimits[0])==0){ 
 	  controlPos[0] -= 1;
   }
   if (switches & SW4 && (controlPos[0] < colLimits[1])){ 
