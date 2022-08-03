@@ -91,11 +91,9 @@ void position_update_ball()
   }
   if (switches & SW2 && controlPos[1] < limitW[1]){ 
 	  controlPos[1] += 1;
-	  //draw_ptrn();
   }
   if (switches & SW3 && controlPos[0] > limitH[0]){ 
 	  controlPos[0] -= 1;
-	  //R_draw_ptrn();
   }
   if (switches & SW4 && controlPos[0] < limitH[0]){ 
 	  controlPos[0] += 1;
@@ -108,9 +106,9 @@ void position_update_ball()
 void
 update_shape()
 {
-  draw_ptrn();
-  R_draw_ptrn();
-  //screen_update_ball();
+  //draw_ptrn();
+  //R_draw_ptrn();
+  screen_update_ball();
 }
 
 short redrawScreen = 1;
