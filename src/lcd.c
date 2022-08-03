@@ -28,7 +28,7 @@ void R_draw_ptrn()
 		  	//buzzer_set_period(10000);
 	    }
 	  else
-	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
+	    fillRectangle(row, col, 10, 10, COLOR_BLACK);
 	      //buzzer_set_period(7500);
 	}
 }
