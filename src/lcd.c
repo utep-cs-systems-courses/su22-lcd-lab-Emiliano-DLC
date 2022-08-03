@@ -14,7 +14,7 @@ void draw_SQ()
 	{
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(col, row, 1, 1, COLOR_PINK);
+	      fillRectangle(row, col, 1, 1, COLOR_PINK);
 	    }
 	  else
 	    fillRectangle(col, row, 1, 1, COLOR_BLUE);
