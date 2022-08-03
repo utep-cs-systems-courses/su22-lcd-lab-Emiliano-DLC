@@ -90,11 +90,11 @@ void position_update_ball()
 	  controlPos[1] -= 1;
   }
   if (switches & SW2 && controlPos[0] < limitW[1]){ 
-	  controlPos[1] += 1;
+	  controlPos[1] -= 1;
 	  //draw_ptrn();
   }
   if (switches & SW3 && controlPos[1] > limitH[0]){ 
-	  controlPos[0] -= 1;
+	  controlPos[0] += 1;
 	  //R_draw_ptrn();
   }
   if (switches & SW4 && controlPos[1] < limitH[1]){ 
