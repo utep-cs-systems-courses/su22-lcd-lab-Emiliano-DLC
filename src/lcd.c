@@ -14,10 +14,10 @@ void R_draw_ptrn()
 	green_on = 0;
 	led_changed = 1;
 	led_update();
-  for (unsigned char screenHeight = 0; col <= 0; col--)
+  for (unsigned char col = screenWidth; row > 0; col--)
     {
 
-      for(unsigned char row = screenWidth; row <= 0; row--)
+      for(unsigned char row = screenWidth; row > 0; row--)
 	{ 
 	  if(col % 2 == 0)
 	    {
