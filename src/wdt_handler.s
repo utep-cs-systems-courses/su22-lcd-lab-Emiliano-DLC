@@ -44,19 +44,3 @@ WDT:
 	and	#0xffef, 0(r1)	; clear CPU off in saved SR
 dont_wake:	
 	RETI			;pop sr & pc
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
