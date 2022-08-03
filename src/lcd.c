@@ -8,16 +8,16 @@
 
 void draw_SQ()
 {
-  for (unsigned char col = 0; col < screenWidth; col++)
+  for (unsigned char col = 0; col <= screenWidth; col++)
     {
-      for(unsigned char row = 0; row < screenHeight; row++)
+      for(unsigned char row = 0; row <= screenHeight; row++)
 	{
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(row, col, 1, 1, COLOR_PINK);
+	      fillRectangle(row, col, 4, 4, COLOR_PINK);
 	    }
 	  else
-	    fillRectangle(col, row, 1, 1, COLOR_BLACK);
+	    fillRectangle(col, row, 4, 4, COLOR_BLACK);
 	}
 	}
 }
