@@ -87,6 +87,7 @@ screen_update_ball()
 void
 update_shape()
 {
+	draw_ptrn();
   screen_update_ball();
 }
 
