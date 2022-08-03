@@ -10,10 +10,6 @@
 void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
-	red_on = 1;
-	green_on = 0;
-	led_changed = 1;
-	led_update();
   for (unsigned char col = screenHeight; col > 0; col--)
     {
 	//red_on ^= 1;
@@ -24,12 +20,12 @@ void R_draw_ptrn()
 	{ 
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(col, row, 10, 10, COLOR_PINK);
-		  	//buzzer_set_period(10000);
+	      fillRectangle(row, col, 5, 5, COLOR_BLACK);
+		  	buzzer_set_period(0);
 	    }
 	  else
-	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
-	      //buzzer_set_period(7500);
+	    fillRectangle(col, row, 5, 5, COLOR_PINK);
+	      buzzer_set_period(0);
 	}
 }
 	buzzer_set_period(0);
