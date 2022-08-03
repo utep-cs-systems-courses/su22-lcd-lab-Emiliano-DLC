@@ -7,7 +7,7 @@
 #include "buzzer.h"
 #include "led.h"
 
-void R_draw_ptrn()
+/*void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
 	red_on = 1;
@@ -33,7 +33,7 @@ void R_draw_ptrn()
 	}
 }
 	buzzer_set_period(0);
-}
+}*/
 
 void draw_ptrn()
 {
@@ -89,7 +89,7 @@ update_shape()
 {
   screen_update_ball();
 	draw_ptrn();
-	R_draw_ptrn();
+	//R_draw_ptrn();
 	//clearScreen(COLOR_BLUE);
 }
 
