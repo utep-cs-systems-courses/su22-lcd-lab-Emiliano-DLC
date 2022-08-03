@@ -18,9 +18,11 @@ void draw_SQ()
 	  if(col % 2 == 0)
 	    {
 	      fillRectangle(row, col, 5, 5, COLOR_PINK);
+		  	buzzer_set_period(10000);
 	    }
 	  else
-	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
+	    fillRectangle(col, row, 5, 5, COLOR_BLACK);
+	      buzzer_set_period(7500);
 	}
 	}
 	buzzer_set_period(0);
