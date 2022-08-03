@@ -4,11 +4,8 @@
 #include "lcddraw.h"
 #include "lcd.h"
 #include "switches.h"
-//#include "buzzer.h"
-//#include "led.h"
 
 #define LED BIT6		/* note that bit zero req'd for display */
-
 
 void main()
 {
@@ -22,7 +19,7 @@ void main()
   enableWDTInterrupts();      /**< enable periodic interrupt */
   or_sr(0x8);	              /**< GIE (enable interrupts) */
   
-  clearScreen(COLOR_PINK);
+  clearScreen(COLOR_BLACK);
   while (1) {			/* forever */
     if (redrawScreen) {
       redrawScreen = 0;
