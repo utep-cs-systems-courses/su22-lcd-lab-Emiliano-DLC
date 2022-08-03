@@ -17,7 +17,7 @@ void draw_SQ()
 	      fillRectangle(row, col, 1, 1, COLOR_PINK);
 	    }
 	  else
-	    fillRectangle(col, row, 1, 1, COLOR_BLUE);
+	    fillRectangle(col, row, 1, 1, COLOR_BLACK);
 	}
 	}
 }
