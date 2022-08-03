@@ -9,15 +9,16 @@
 
 void draw_SQ()
 {
+buzzer_set_period(5000);
   for (unsigned char col = 0; col <= screenHeight; col++)
     {
-	buzzer_set_period(5000);
+
       for(unsigned char row = 0; row <= screenWidth; row++)
 	{
 	  buzzer_set_period(0); 
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(row, col, 10, 10, COLOR_PINK);
+	      fillRectangle(row, col, 5, 5, COLOR_PINK);
 	    }
 	  else
 	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
