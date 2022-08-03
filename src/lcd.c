@@ -67,7 +67,7 @@ short limitH[2] = {0, screenHeight-1};
 void
 draw_ball(int col, int row, unsigned short color)
 {
-  fillRectangle(col-1, row-1, 1, 1, color);
+  fillRectangle(col-1, row-1, 5, 5, color);
 }
 
 void
@@ -92,10 +92,10 @@ update_shape()
 
 void position_update_ball()
 {
-  if (switches & SW1 && controlPos[1] > limitH[1]) controlPos[1] -= 1;
-  if (switches & SW2 && controlPos[1] < limitH[0]) controlPos[1] += 1;
-  if (switches & SW3 && controlPos[0] > limitW[1]) controlPos[0] -= 1;
-  if (switches & SW4 && controlPos[0] < limitW[0]) controlPos[0] += 1;
+  if (switches & SW1 && controlPos[1] > limitH[0]) controlPos[1] -= 1;
+  if (switches & SW2 && controlPos[1] < limitH[1]) controlPos[1] += 1;
+  if (switches & SW3 && controlPos[0] > limitW[0]) controlPos[0] -= 1;
+  if (switches & SW4 && controlPos[0] < limitW[1]) controlPos[0] += 1;
 }
 
 
