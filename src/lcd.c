@@ -62,7 +62,7 @@ unsigned char step = 0;
 //short drawPos[2] = {screenHeight/2 , screenWidth/2}, controlPos[2] = {(screenHeight/2)+1, screenWidth/2};
 short drawPos[2] = {screenWidth/2 , screenHeight/2}, controlPos[2] = {screenWidth, 0};
 short colVelocity = 1;
-short colLimits[2] = {screenWidth+1, screenHeight+1};
+short colLimits[2] = {0, screenHeight};
 //short rowLimits[2] = {1, screenHeight};
 
 void
