@@ -83,13 +83,6 @@ screen_update_ball()
     drawPos[axis] = controlPos[axis];
   draw_ball(drawPos[0], drawPos[1], COLOR_WHITE); /* draw */
 }
-    
-void
-update_shape()
-{
-	draw_ptrn();
-  screen_update_ball();
-}
 
 void position_update_ball()
 {
@@ -101,7 +94,14 @@ void position_update_ball()
 
 
 //---------------------------------------------------------------------
-	
+
+void
+update_shape()
+{
+  //draw_ptrn();
+  screen_update_ball();
+}
+
 short redrawScreen = 1;
 
 void wdt_c_handler()
@@ -114,4 +114,5 @@ void wdt_c_handler()
    redrawScreen = 1;
     secCount = 0;
    }
+	draw_ptrn();
    }
