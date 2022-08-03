@@ -7,6 +7,27 @@
 #include "buzzer.h"
 #include "led.h"
 
+void draw_ptrn()
+{
+	buzzer_set_period(5000);
+  for (unsigned char col = 0; col <= screenHeight; col++)
+    {
+
+      for(unsigned char row = 0; row <= screenWidth; row++)
+	{ 
+	  if(col % 2 == 0)
+	    {
+	      fillRectangle(row, col, 5, 5, COLOR_PINK);
+		  	buzzer_set_period(10000);
+	    }
+	  else
+	    fillRectangle(col, row, 5, 5, COLOR_BLACK);
+	      buzzer_set_period(7500);
+	}
+	}
+	buzzer_set_period(0);
+}
+
 void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
@@ -24,11 +45,11 @@ void R_draw_ptrn()
 	{ 
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(row, col, 5, 5, COLOR_BLUE);
+	      fillRectangle(row, col, 5, 5, COLOR_BLACK);
 		  	//buzzer_set_period(10000);
 	    }
 	  else
-	    fillRectangle(col, row, 5, 5, COLOR_GREEN);
+	    fillRectangle(col, row, 5, 5, COLOR_PINK);
 	      //buzzer_set_period(7500);
 	}
 	}
@@ -59,27 +80,6 @@ screen_update_ball()
   for (char axis = 0; axis < 2; axis ++) 
     drawPos[axis] = controlPos[axis];
   draw_ball(drawPos[0], drawPos[1], COLOR_WHITE); /* draw */
-}
-
-void draw_ptrn()
-{
-	buzzer_set_period(5000);
-  for (unsigned char col = 0; col <= screenHeight; col++)
-    {
-
-      for(unsigned char row = 0; row <= screenWidth; row++)
-	{ 
-	  if(col % 2 == 0)
-	    {
-	      fillRectangle(row, col, 5, 5, COLOR_PINK);
-		  	buzzer_set_period(10000);
-	    }
-	  else
-	    fillRectangle(col, row, 5, 5, COLOR_BLACK);
-	      buzzer_set_period(7500);
-	}
-	}
-	buzzer_set_period(0);
 }
     
 void
