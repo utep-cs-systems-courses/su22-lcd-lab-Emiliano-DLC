@@ -96,7 +96,7 @@ update_shape()
 {
   screen_update_ball();
 	draw_ptrn();
-	//R_draw_ptrn();
+	R_draw_ptrn();
 	//clearScreen(COLOR_BLUE);
 }
 
