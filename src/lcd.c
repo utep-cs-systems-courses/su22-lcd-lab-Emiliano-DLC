@@ -105,8 +105,8 @@ update_shape()
 {
   screen_update_ball();
 	//led_start();
-	draw_ptrn();
-	R_draw_ptrn();
+	//draw_ptrn();
+	//R_draw_ptrn();
 	//clearScreen(COLOR_BLUE);
 }
 
