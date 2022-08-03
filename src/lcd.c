@@ -7,15 +7,28 @@
 #include "buzzer.h"
 #include "led.h"
 
+void led_start()
+{
+	red_on = 1;
+	green_on = 0;
+	led_changed = 1;
+	led_update();	
+}
+
+void led_shift()
+{
+	red_on ^= 1;
+	green_on ^= 1;
+	led_changed = 1;
+	led_update();	
+}
+
 void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
   for (unsigned char col = screenHeight; col > 0; col--)
     {
-	//red_on ^= 1;
-	//green_on ^= 1;
-	//led_changed = 1;
-	//led_update();
+	  led_shift();
       for(unsigned char row = screenWidth; row > 0; row--)
 	{ 
 	  if(col % 2 == 0)
@@ -91,6 +104,7 @@ void
 update_shape()
 {
   screen_update_ball();
+	led_start();
 	draw_ptrn();
 	R_draw_ptrn();
 	//clearScreen(COLOR_BLUE);
