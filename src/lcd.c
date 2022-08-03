@@ -4,6 +4,7 @@
 #include "lcddraw.h"
 #include "switches.h"
 #include "lcd.h"
+#include "buzzer.h"
 
 
 void draw_SQ()
@@ -15,9 +16,11 @@ void draw_SQ()
 	  if(col % 2 == 0)
 	    {
 	      fillRectangle(row, col, 10, 10, COLOR_PINK);
+		buzzer_set_period(5000);
 	    }
 	  else
 	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
+	      buzzer_set_period(0); 
 	}
 	}
 }
