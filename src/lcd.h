@@ -2,7 +2,7 @@
 #define lcd_included
 
 //Variables
-extern char redrawScreen;
+extern short redrawScreen;
 
 void draw_SQ();
 
