@@ -9,6 +9,9 @@
 
 #define LED BIT6		/* note that bit zero req'd for display */
 
+char blue = 31, green = 0, red = 31;
+unsigned char step = 0;
+
 void main()
 {
   
