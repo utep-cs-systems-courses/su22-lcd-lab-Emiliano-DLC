@@ -35,13 +35,13 @@ void R_draw_ptrn()
 	green_on = 0;
 	led_changed = 1;
 	led_update();
-  for (unsigned char col = screenHeight; col >= 0; col--)
+  for (unsigned char col = screenHeight; col > 0; col--)
     {
 		red_on ^= 1;
 	green_on ^= 1;
 	led_changed = 1;
 	led_update();
-      for(unsigned char row = screenWidth; row >= 0; row--)
+      for(unsigned char row = screenWidth; row > 0; row--)
 	{ 
 	  if(col % 2 == 0)
 	    {
@@ -52,7 +52,7 @@ void R_draw_ptrn()
 	    fillRectangle(col, row, 5, 5, COLOR_PINK);
 	      //buzzer_set_period(7500);
 	}
-	}
+}
 	buzzer_set_period(0);
 }
 
