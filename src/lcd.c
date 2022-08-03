@@ -9,13 +9,12 @@
 
 void draw_SQ()
 {
-buzzer_set_period(5000);
+	buzzer_set_period(5000);
   for (unsigned char col = 0; col <= screenHeight; col++)
     {
 
       for(unsigned char row = 0; row <= screenWidth; row++)
-	{
-	  buzzer_set_period(0); 
+	{ 
 	  if(col % 2 == 0)
 	    {
 	      fillRectangle(row, col, 5, 5, COLOR_PINK);
@@ -23,8 +22,8 @@ buzzer_set_period(5000);
 	  else
 	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
 	}
-	  buzzer_set_period(0);
 	}
+	buzzer_set_period(0);
 }
 
 char blue = 31, green = 0, red = 31;
