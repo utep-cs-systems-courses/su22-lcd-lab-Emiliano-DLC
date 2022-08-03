@@ -22,7 +22,7 @@ void R_draw_ptrn()
 	led_update();
       for(unsigned char row = screenHeight; row > 0; row--)
 	{ 
-	  if(row % 2 == 0)
+	  if(col % 2 == 0)
 	    {
 	      fillRectangle(col, row, 10, 10, COLOR_PINK);
 		  	//buzzer_set_period(10000);
