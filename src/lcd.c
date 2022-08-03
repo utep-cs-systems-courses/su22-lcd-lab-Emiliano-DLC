@@ -101,8 +101,8 @@ screen_update_ball()
 void
 update_shape()
 {
-  //screen_update_ball();
-  screen_update_bar();
+  screen_update_ball();
+  //screen_update_bar();
 	//led_start();
 	//draw_ptrn();
 	//R_draw_ptrn();
