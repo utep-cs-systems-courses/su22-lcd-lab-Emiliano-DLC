@@ -5,6 +5,7 @@
 #include "switches.h"
 #include "lcd.h"
 #include "buzzer.h"
+#include "led.h"
 
 void R_draw_ptrn()
 {
