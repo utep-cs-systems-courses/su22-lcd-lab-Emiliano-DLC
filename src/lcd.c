@@ -17,7 +17,7 @@ void R_draw_ptrn()
   for (unsigned char col = screenWidth; col > 0; col--)
     {
 		red_on ^= 1;
-	green_on = ^1;
+	green_on ^= 1;
 	led_changed = 1;
 	led_update();
       for(unsigned char row = screenWidth; row > 0; row--)
