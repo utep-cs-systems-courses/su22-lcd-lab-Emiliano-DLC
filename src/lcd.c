@@ -108,8 +108,9 @@ void position_update_ball()
 void
 update_shape()
 {
-  //draw_ptrn();
-  screen_update_ball();
+  draw_ptrn();
+  R_draw_ptrn();
+  //screen_update_ball();
 }
 
 short redrawScreen = 1;
