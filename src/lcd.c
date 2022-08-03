@@ -24,11 +24,11 @@ void R_draw_ptrn()
 	{ 
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(row, col, 5, 5, COLOR_BLACK);
+	      fillRectangle(row, col, 10, 10, COLOR_BLACK);
 		  	//buzzer_set_period(10000);
 	    }
 	  else
-	    fillRectangle(col, row, 5, 5, COLOR_PINK);
+	    fillRectangle(col, row, 10, 10, COLOR_PINK);
 	      //buzzer_set_period(7500);
 	}
 }
