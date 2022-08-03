@@ -23,6 +23,7 @@ buzzer_set_period(5000);
 	  else
 	    fillRectangle(col, row, 10, 10, COLOR_BLACK);
 	}
+	  buzzer_set_period(0);
 	}
 }
 
