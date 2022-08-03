@@ -26,10 +26,10 @@ void led_shift()
 void R_draw_ptrn()
 {
 //buzzer_set_period(5000);
-  for (unsigned char col = screenHeight; col > 0; col--)
+  for (unsigned char col = 0; col <= screenHeight; col++)
     {
 	  //led_shift();
-      for(unsigned char row = 0; row <= screenWidth; row++)
+      for(unsigned char row = screenWidth; row > 0; row--)
 	{ 
 	  if(col % 2 == 0)
 	    {
