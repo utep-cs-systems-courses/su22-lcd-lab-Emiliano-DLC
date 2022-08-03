@@ -83,7 +83,7 @@ short colVelocity = 1, colLimits[2] = {1, screenWidth};
 void
 draw_ball(int col, int row, unsigned short color)
 {
-  fillRectangle(col-1, row-1, 3, 3, color);
+  fillRectangle(col-1, row-1, 5, 5, color);
 }
 
 void
