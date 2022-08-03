@@ -80,6 +80,7 @@ update_shape()
 {
   screen_update_ball();
   screen_update_hourglass();
+	draw_SQ();
 }
 
 	
