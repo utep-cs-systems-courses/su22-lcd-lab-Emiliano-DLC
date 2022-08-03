@@ -61,9 +61,9 @@ unsigned char step = 0;
 
 //short drawPos[2] = {screenHeight/2 , screenWidth/2}, controlPos[2] = {(screenHeight/2)+1, screenWidth/2};
 short drawPos[2] = {screenWidth/2 , screenHeight/2}, controlPos[2] = {(screenWidth/2)+1, screenHeight/2};
-short colVelocity = 1, colLimits[2] = {1, screenWidth};
-short limitW[2] = {1, screenWidth-1};
-short limitH[2] = {2, screenHeight-1};
+short colVelocity = 1
+short colLimits[2] = {1, screenWidth};
+short rowLimits[2] = {1, screenHeight};
 
 void
 draw_ball(int col, int row, unsigned short color)
@@ -87,16 +87,16 @@ screen_update_ball()
 
 void position_update_ball()
 {
-  if (switches & SW1 && controlPos[1] > limitW[0]){
+  if (switches & SW1 && controlPos[1] > colLimits[0]){
 	  controlPos[1] -= 1;
   }
-  if (switches & SW2 && controlPos[1] < limitW[1]){ 
+  if (switches & SW2 && controlPos[1] < colLimits[1]){ 
 	  controlPos[1] += 1;
   }
-  if (switches & SW3 && controlPos[0] > limitH[0]){ 
+  if (switches & SW3 && controlPos[0] > rowLimits[0]){ 
 	  controlPos[0] -= 1;
   }
-  if (switches & SW4 && controlPos[0] < limitH[1]){ 
+  if (switches & SW4 && controlPos[0] < rowLimits[1]){ 
 	  controlPos[0] += 1;
   }
 }
