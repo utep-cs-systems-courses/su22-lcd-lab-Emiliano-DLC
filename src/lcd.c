@@ -152,7 +152,7 @@ void wdt_c_handler()
 
   secCount ++;
   if (secCount >= 25) {		/* 10/sec */
-  	position_update_ball();
+  	//position_update_ball();
     position_update_bar();
     redrawScreen = 1;
     secCount = 0;
