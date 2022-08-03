@@ -16,6 +16,7 @@ void main()
   lcd_init();
   switch_init();
   buzzer_init();
+  led_init();
   
   enableWDTInterrupts();      /**< enable periodic interrupt */
   or_sr(0x8);	              /**< GIE (enable interrupts) */
