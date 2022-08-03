@@ -30,17 +30,17 @@ void R_draw_ptrn()
 
 void draw_ptrn()
 {
-	//red_on = 1;
-	//green_on = 0;
-	//led_changed = 1;
-	//led_update();
+	red_on = 1;
+	green_on = 0;
+	led_changed = 1;
+	led_update();
 	buzzer_set_period(0);
   for (unsigned char col = 0; col <= screenHeight; col++)
     {
-	//red_on ^= 1;
-	//green_on ^= 1;
-	//led_changed = 1;
-	//led_update();
+	red_on ^= 1;
+	green_on ^= 1;
+	led_changed = 1;
+	led_update();
       for(unsigned char row = 0; row <= screenWidth; row++)
 	{ 
 	  if(col % 2 == 0)
@@ -86,10 +86,20 @@ screen_update_ball()
 
 void position_update_ball()
 {
-  if (switches & SW1 && controlPos[0] > limitW[0]) controlPos[1] -= 1;
-  if (switches & SW2 && controlPos[0] < limitW[1]) controlPos[1] += 1;
-  if (switches & SW3 && controlPos[1] > limitH[0]) controlPos[0] -= 1;
-  if (switches & SW4 && controlPos[1] < limitH[1]) controlPos[0] += 1;
+  if (switches & SW1 && controlPos[0] > limitW[0]){
+	  controlPos[1] -= 1;
+  }
+  if (switches & SW2 && controlPos[0] < limitW[1]){ 
+	  controlPos[1] += 1;
+	  draw_ptrn();
+  }
+  if (switches & SW3 && controlPos[1] > limitH[0]){ 
+	  controlPos[0] -= 1;
+	  R_draw_ptrn();
+  }
+  if (switches & SW4 && controlPos[1] < limitH[1]){ 
+	  controlPos[0] += 1;
+  }
 }
 
 
@@ -114,5 +124,5 @@ void wdt_c_handler()
    redrawScreen = 1;
     secCount = 0;
    }
-	draw_ptrn();
+	//draw_ptrn();
    }
